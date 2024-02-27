@@ -1,0 +1,296 @@
+  
+  
+      ####################################################################
+      ##****************************************************************##
+      ##**++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++**##
+      ##**++   GGGGGG     RRRRRR        A      PPPPPPP     EEEEEE   ++**##
+      ##**++  G      G   R      R      A A     P      P   E         ++**##
+      ##**++  G          R       R    A   A    P       P  E         ++**##
+      ##**++  G  GGGGGG  R  RRRR     A     A   PPPPPPPP   EEEEEEE   ++**##
+      ##**++  G     G G  R   R       AAAAAAA   P          E         ++**##
+      ##**++  G     G G  R    R     A       A  P          E         ++**##
+      ##**++   GGGGG  G  R      RR  A       A  P          EEEEEEEE  ++**##
+      ##**++                                                        ++**##
+      ##**++  GRAce-based generator for Proton-Electron collisions  ++**##
+      ##**++                                                        ++**##
+      ##**++               GRAPE-Dilepton_version1.1                ++**##
+      ##**++                     ^^^^^^^^                           ++**##
+      ##**++                      Mar. 14 2000                      ++**##
+      ##**++   Comments/bug-report to Tetsuo ABE(tabe@post.kek.jp)  ++**##
+      ##**++                                    (abe@mail.desy.de)  ++**##
+      ##**++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++**##
+      ##****************************************************************##
+      ####################################################################
+  
+                <<<<<<<<<< This is an INTEGRATION step. >>>>>>>>>>              
+  
+  
+ ======> Start of reading control_cards(Read_Cards)
+  
+1           USER'S DIRECTIVES TO RUN THIS JOB
+            ----------------------------------
+
+
+ ***** DATA CARD CONTENT     LIST                                                                            
+ ***** DATA CARD CONTENT     NCALL   1400000                                                                 
+ ***** DATA CARD CONTENT     C ======================================================================        
+ ***** DATA CARD CONTENT     C << Polarization of the Lepton Beam >>                                         
+ ***** DATA CARD CONTENT     C            (1)    (2)    (3)                                                  
+ ***** DATA CARD CONTENT     EPOL         -0.7    0.     0.                                                  
+ ***** DATA CARD CONTENT     C ======================================================================        
+ ***** DATA CARD CONTENT     C << Process in the Proton Vertex >>   (1:elastic, 2:quasi-elastic, 3:DIS)      
+ ***** DATA CARD CONTENT     PROCESS       3                                                                 
+ ***** DATA CARD CONTENT     C ======================================================================        
+ ***** DATA CARD CONTENT     C << Produced Lepton-pair >>   (1:di-e, 2:di-mu, 3:di-tau)                      
+ ***** DATA CARD CONTENT     LPAIR         2                                                                 
+ ***** DATA CARD CONTENT     C ======================================================================        
+ ***** DATA CARD CONTENT     C << Scattered Quark in DIS >>                                                  
+ ***** DATA CARD CONTENT     C   (1:u, 2:u-bar, 3:d, 4:d-bar, 5:s, 6:s-bar, 7:c, ... , 12:t-bar)             
+ ***** DATA CARD CONTENT     QFLV          1                                                                 
+ ***** DATA CARD CONTENT     MERGE    123456                                                                 
+ ***** DATA CARD CONTENT     C ======================================================================        
+ ***** DATA CARD CONTENT     C << PDF set in DIS >>   (See PDFLIB manual.)                                   
+ ***** DATA CARD CONTENT     NGROUP        5                                                                 
+ ***** DATA CARD CONTENT     NSET          5                                                                 
+ ***** DATA CARD CONTENT     C ======================================================================        
+ ***** DATA CARD CONTENT     C ######################################################################        
+ ***** DATA CARD CONTENT     C ======================================================================        
+ ***** DATA CARD CONTENT     C << Electroweak Dilepton Production >>                                         
+ ***** DATA CARD CONTENT     GRASEL        2                                                                 
+ ***** DATA CARD CONTENT     C ======================================================================        
+ ***** DATA CARD CONTENT     C ######################################################################        
+ ***** DATA CARD CONTENT     C ======================================================================        
+ ***** DATA CARD CONTENT     C << Mass Range for the Hadronic System >>  (only for quasi-elastic and DIS)    
+ ***** DATA CARD CONTENT     MHAD          5.   300.                                                         
+ ***** DATA CARD CONTENT     C ------------                                                                  
+ ***** DATA CARD CONTENT     C << Q2 Range for the Proton Vertex >>                                          
+ ***** DATA CARD CONTENT     Q2P           1.     1.E20                                                      
+ ***** DATA CARD CONTENT     C ------------                                                                  
+ ***** DATA CARD CONTENT     C << Cuts for each Final-state Particle >>                                      
+ ***** DATA CARD CONTENT     C           <p/q>  <e+->  <l-+>  <l+->                                          
+ ***** DATA CARD CONTENT     THMIN        10.     0.     0.     0.                                           
+ ***** DATA CARD CONTENT     THMAX       180.   180.   180.   180.                                           
+ ***** DATA CARD CONTENT     EMIN          0.     0.     0.     0.                                           
+ ***** DATA CARD CONTENT     EMAX          1.E20  1.E20  1.E20  1.E20                                        
+ ***** DATA CARD CONTENT     PMIN          0.     0.     0.     0.                                           
+ ***** DATA CARD CONTENT     PMAX          1.E20  1.E20  1.E20  1.E20                                        
+ ***** DATA CARD CONTENT     PTMIN        15.     0.     0.     0.                                           
+ ***** DATA CARD CONTENT     PTMAX         1.E20  1.E20  1.E20  1.E20                                        
+ ***** DATA CARD CONTENT     C ------------                                                                  
+ ***** DATA CARD CONTENT     C << Mass cuts >>                                                               
+ ***** DATA CARD CONTENT     MASSLL        4.     1.E20                                                      
+ ***** DATA CARD CONTENT                   0.     1.E20                                                      
+ ***** DATA CARD CONTENT     C ------------                                                                  
+ ***** DATA CARD CONTENT     C << Cuts for One or Some of the Final-state Particles >>                       
+ ***** DATA CARD CONTENT     IVISI         2                                                                 
+ ***** DATA CARD CONTENT     C           <p/q>  <e+->  <l-+>  <l+->                                          
+ ***** DATA CARD CONTENT     THEVMIN       0.     5.    20.    20.                                           
+ ***** DATA CARD CONTENT     THEVMAX       0.   175.   160.   160.                                           
+ ***** DATA CARD CONTENT     EVMIN         0.     0.     0.     0.                                           
+ ***** DATA CARD CONTENT     EVMAX         0.     1.E20  1.E20  1.E20                                        
+ ***** DATA CARD CONTENT     PTVMIN        0.     5.     3.     3.                                           
+ ***** DATA CARD CONTENT     PTVMAX        0.     1.E20  1.E20  1.E20                                        
+ ***** DATA CARD CONTENT     C ======================================================================        
+ ***** DATA CARD CONTENT     STOP                                                                            
+  
+ ========> End of reading control_cards(Read_Cards)
+  
+  
+ ---> DIS process
+        (Scattering of e and u quark) 
+ ---> Muon-pair production 
+  
+ ---> jgra_sel  =         2
+ ---> jgra_flag =      4352          0          0          0          0
+                          0          0          0          0          0
+  
+                    grace 2.1(5)
+
+          (c)Copyright 1990-1998 Minami-Tateya Group (Japan)
+
+  
+ >>> Graph selection
+ jselg =
+   1 :  0
+   2 :  0
+   3 :  0
+   4 :  0
+   5 :  0
+   6 :  0
+   7 :  0
+   8 :  0
+   9 :  1
+   10 :  0
+   11 :  0
+   12 :  0
+   13 :  1
+   14 :  0
+   15 :  0
+   16 :  0
+   17 :  0
+   18 :  0
+   19 :  0
+   20 :  0
+   21 :  0
+   22 :  0
+   23 :  0
+   24 :  0
+   25 :  0
+  
+  
+ ========> Start of Kinematics Initialization
+  
+ ********** Information (in Lab. frame) **********
+                               (in unit of GeV)
+   P of electrons    =    27.5200
+   P of protons      =    820.000
+   Mass of electron  =    5.10999E-04
+   Mass of proton    =   0.938272
+   sqrt(S)           =    300.444
+   P of CMS          =    792.480
+   E of CMS          =    847.521
+   gamma of CMS      =    2.82089
+   beta*gamma of CMS =    2.63770
+ ***********************************************
+  
+  << Mass range for the hadronic system >> 
+       Min. =    5.00000 GeV
+       Max. =    300.000 GeV
+  
+ ------> PDFLIB Initialization started
+  
+  *****  PDFLIB Version:   7.09  Released on   970702  at   16.05 
+  in the CERN Computer Program Library  W5051  *****
+  *****  Library compiled on  970702 at  16.05  *****
+
+  Parm =    Nptype   Ngroup   Nset  
+  Val  =    1.0000   5.0000   5.0000
+
+  Nptype = 1  Ngroup = 5  Nset =  5  Name  = "GRV94-LO"  CrMode =  -1
+  Nfl    = -5,  LO = 1,  Tmas =  180.00 GeV/c**2
+  QCDL4  =  0.2000 GeV,  QCDL5 =  0.1530 GeV
+  Xmin   =  0.10E-05,  Xmax = 0.99999E+00,  Q2min =   0.400 (GeV/c)**2,  Q2max = 0.10E+07 (GeV/c)**2
+  
+ ------> PDFLIB Initialization finished
+  
+ ------> ISR for incoming lepton  using Structure Function method 
+  
+    itag,isym,i34 =  0  0  3
+    Ireso56,Ireso456 =  -1  -1
+  
+ ========> End of Kinematics Initialization
+  
+ >>> e+ beam
+  
+
+                                                       Date:  0/ 4/12  21:29
+        **********************************************************
+        *                                                        *
+        *     BBBBBBB     AAAA     SSSSSS   EEEEEE   SSSSSS      *
+        *     BB    BB   AA  AA   SS    SS  EE      SS    SS     *
+        *     BB    BB  AA    AA  SS        EE      SS           *
+        *     BBBBBBB   AAAAAAAA   SSSSSS   EEEEEE   SSSSSS      *
+        *     BB    BB  AA    AA        SS  EE            SS     *
+        *     BB    BB  AA    AA  SS    SS  EE      SS    SS     *
+        *     BBBB BB   AA    AA   SSSSSS   EEEEEE   SSSSSS      *
+        *                                                        *
+        *                   BASES Version 5.1                    *
+        *           coded by S.Kawabata KEK, March 1994          *
+        **********************************************************
+
+
+     <<   Parameters for BASES    >>
+
+      (1) Dimensions of integration etc.
+          # of dimensions :    Ndim    =        9   ( 50 at max.)
+          # of Wilds      :    Nwild   =        7   ( 15 at max.)
+          # of sample points : Ncall   =  1399680(real)  1400000(given)
+          # of subregions    : Ng      =       48 / variable
+          # of regions       : Nregion =        6 / variable
+          # of Hypercubes    : Ncube   =   279936
+
+      (2) About the integration variables
+          ------+---------------+---------------+-------+-------
+              i       XL(i)           XU(i)       IG(i)   Wild
+          ------+---------------+---------------+-------+-------
+              1    0.000000E+00    1.000000E+00     1      yes
+              2    0.000000E+00    1.000000E+00     1      yes
+              3    0.000000E+00    1.000000E+00     1      yes
+              4    0.000000E+00    1.000000E+00     1      yes
+              5    0.000000E+00    1.000000E+00     1      yes
+              6    0.000000E+00    1.000000E+00     1      yes
+              7    0.000000E+00    1.000000E+00     1      yes
+              8    0.000000E+00    1.000000E+00     0       no
+              9    0.000000E+00    1.000000E+00     0       no
+          ------+---------------+---------------+-------+-------
+
+      (3) Parameters for the grid optimization step
+          Max.# of iterations: ITMX1 =        4
+          Expected accuracy  : Acc1  =   0.2000 %
+
+      (4) Parameters for the integration step
+          Max.# of iterations: ITMX2 =       10
+          Expected accuracy  : Acc2  =   0.0100 %
+
+                                                       Date:  0/ 4/12  21:29
+               Convergency Behavior for the Grid Optimization Step
+ ------------------------------------------------------------------------------
+ <- Result of  each iteration ->  <-     Cumulative Result     -> < CPU  time >
+  IT Eff R_Neg   Estimate  Acc %  Estimate(+- Error )order  Acc % ( H: M: Sec )
+ ------------------------------------------------------------------------------
+   1   2  0.00  4.586E-02  6.435  4.586406(+-0.295122)E-02  6.435   0: 1:37.57
+   2  29  0.00  5.205E-02  0.295  5.203249(+-0.015359)E-02  0.295   0: 7:23.86
+   3  37  0.00  5.196E-02  0.201  5.198557(+-0.008625)E-02  0.166   0:13:52.62
+ ------------------------------------------------------------------------------
+
+                                                       Date:  0/ 4/12  21:29
+               Convergency Behavior for the Integration Step      
+ ------------------------------------------------------------------------------
+ <- Result of  each iteration ->  <-     Cumulative Result     -> < CPU  time >
+  IT Eff R_Neg   Estimate  Acc %  Estimate(+- Error )order  Acc % ( H: M: Sec )
+ ------------------------------------------------------------------------------
+   1  38  0.00  5.196E-02  0.194  5.196162(+-0.010077)E-02  0.194   0:20:27.03
+   2  39  0.00  5.201E-02  0.198  5.198416(+-0.007197)E-02  0.138   0:27: 0.89
+   3  38  0.00  5.201E-02  0.395  5.198705(+-0.006793)E-02  0.131   0:33:34.96
+   4  39  0.00  5.199E-02  0.191  5.198759(+-0.005605)E-02  0.108   0:40: 9.71
+   5  38  0.00  5.200E-02  0.195  5.198989(+-0.004905)E-02  0.094   0:46:43.94
+   6  39  0.00  5.200E-02  0.193  5.199218(+-0.004405)E-02  0.085   0:53:18.60
+   7  38  0.00  5.187E-02  0.193  5.197301(+-0.004032)E-02  0.078   0:59:53.16
+   8  38  0.00  5.185E-02  0.193  5.195602(+-0.003739)E-02  0.072   1: 6:27.22
+   9  38  0.00  5.205E-02  0.193  5.196769(+-0.003505)E-02  0.067   1:13: 1.21
+  10  38  0.00  5.191E-02  0.196  5.196186(+-0.003313)E-02  0.064   1:19:34.81
+ ------------------------------------------------------------------------------
+
+                    ****** END OF BASES *********
+
+
+     <<   Computing Time Information   >>
+
+               (1) For BASES              H: M:  Sec
+                   Overhead           :   0: 0: 0.12
+                   Grid Optim. Step   :   0:13:52.62
+                   Integration Step   :   1: 5:42.20
+                   Go time for all    :   1:19:34.94
+
+               (2) Expected event generation time
+                   Expected time for 1000 events :      0.40 Sec
+  
+ Making bases.rz...
+    ---> BASE1 : finished
+    ---> BASE3 : finished
+    ---> BASE4 : finished
+    ---> BASE5 : finished
+    ---> RANDM : finished
+    ---> PLOTH : finished
+    ---> PLOTB : finished
+    ---> BSRSLT: finished
+
+
+ ===> Directory : //bn
+          3 (N)   BASES data(real*8)  
+          1 (N)   BASES data(integer*4)   
+          2 (N)   BASES data(real*4)  
+ Note: IEEE floating-point exception flags raised: 
+    Inexact;  Underflow; 
+ Nonstandard floating-point mode enabled 
+ See the Numerical Computation Guide, ieee_flags(3M), ieee_sun(3M) 

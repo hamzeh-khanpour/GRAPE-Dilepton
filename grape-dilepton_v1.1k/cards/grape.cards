@@ -1,0 +1,126 @@
+LIST
+C ======================================================================
+C << KF-code of the Lepton Beam >>   (11:electron, -11:positron)
+KFLBEAM     -11
+C ======================================================================
+C << Polarization of the Lepton Beam >>
+C            (1)    (2)    (3)
+EPOL          0.     0.     0.
+C (1) Degree of the polarization(>=-1&<=+1)
+C (2) Direction of the polarization vector (polar     angle in degree)
+C (3) Direction of the polarization vector (azimuthal angle in degree)
+C ======================================================================
+C << Momenta of the Beam Particles(lepton/proton) in MeV/c >>
+C             |||                                    ^^^^^
+EBEAM       27520
+PBEAM      820000
+C             |||
+C ======================================================================
+C << Process in the Proton Vertex >>   (1:elastic, 2:quasi-elastic, 3:DIS)
+PROCESS       1
+C ======================================================================
+C << Produced Lepton-pair >>   (1:di-e, 2:di-mu, 3:di-tau)
+LPAIR         2
+C ======================================================================
+C << ISR for the Beam Lepton >>  (0:off, 1:on)
+ISR           1
+C ======================================================================
+C << Scattered Quark in DIS >>
+C   (1:u, 2:u-bar, 3:d, 4:d-bar, 5:s, 6:s-bar, 7:c, ... , 12:t-bar)
+QFLV          1
+MERGE         0
+C ======================================================================
+C << PDF set in DIS >>   (See PDFLIB manual.)
+NGROUP        4
+NSET         32
+C ======================================================================
+C ######################################################################
+C ======================================================================
+C << Electroweak Dilepton Production >>
+C   1:BH(direct), 2:BH, 3:QED, 4:EW,
+C   13:CO_only, 14:Z0_only
+GRASEL        3
+C ======================================================================
+C ######################################################################
+C ======================================================================
+C << BASES Parameters >>
+ITMX1         4
+ITMX2        10
+NCALL   1200000
+C ======================================================================
+C ######################################################################
+C ======================================================================
+C << SPRING Parameters >>
+NGEN        100
+NMOD       1000
+C ======================================================================
+C << PYTHIA parameters >>
+PSISR         1
+PSFSR         1
+PSBRA         2
+PSSUP         0
+PYDECAY       1
+PRIPT         1
+C ======================================================================
+C << Output of Generated Events >>
+PYLIST      TRUE
+NLIST         10
+NTPYT      FALSE
+C ======================================================================
+C ######################################################################
+C ======================================================================
+C << Q2 Range for the Electron Vertex >>
+Q2RNGME       0.    1.E20
+Q2RNGOB       0.    1.E20
+C ------------
+C << Mass Range for the Hadronic System >>  (only for quasi-elastic and DIS)
+C (quasi-elastic)
+C MHAD          1.08   5.
+C (DIS)
+C MHAD          5.     1.E20
+C ------------
+C << Q2 Range for the Proton Vertex >>
+C (elastic)
+Q2P           0.   100.
+C (quasi-elastic)
+C Q2P           0.   100.
+C (DIS)
+C Q2P           1.     1.E20
+C ------------
+C << Cuts for each Final-state Particle >>
+C           <p/q>  <e+->  <l-+>  <l+->
+THMIN         0.     0.     0.     0.
+THMAX       180.   180.   180.   180.
+EMIN          0.     0.     0.     0.
+EMAX          1.E20  1.E20  1.E20  1.E20
+PMIN          0.     0.     0.     0.
+PMAX          1.E20  1.E20  1.E20  1.E20
+PTMIN         0.     0.     0.     0.
+PTMAX         1.E20  1.E20  1.E20  1.E20
+C ------------
+C << PtMAX cut >>
+PTMCTFLG    FALSE
+THPTMCT       0.   180.
+PTMXCT        0.     1.E20
+C ------------
+C << Mass cuts >>
+MASSLL        0.     1.E20
+              0.     1.E20
+C MASSELL       1.     1.E20
+C MASSQLL       5.     1.E20
+C               5.     1.E20
+C ------------
+C << Cuts for One or Some of the Final-state Particles >>
+IVISI        -1
+C           <p/q>  <e+->  <l-+>  <l+->
+THEVMIN       0.     0.     0.     0.
+THEVMAX       0.   180.   180.   180.
+EVMIN         0.     0.     0.     0.
+EVMAX         0.     1.E20  1.E20  1.E20
+PTVMIN        0.     0.     0.     0.
+PTVMAX        0.     1.E20  1.E20  1.E20
+C ======================================================================
+C ######################################################################
+C ======================================================================
+C
+STOP

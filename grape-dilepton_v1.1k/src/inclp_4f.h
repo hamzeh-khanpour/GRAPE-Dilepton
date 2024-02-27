@@ -1,0 +1,19 @@
+*inclp_4f.h
+      common /amilcd_4f/pf2(4),pf3(4),pf4(4),pf5(4),pf6(4),pf7(4),pf8(4)
+     &              ,pf9(4),pf10(4),pf11(4),pf12(4),pf13(4),pf14(4),
+     &               pf15(4),pf16(4),pf17(4),pf18(4),pf19(4),pf20(4),
+     &               pf21(4),pf22(4),pf23(4),pf24(4),pf25(4),pf26(4),
+     &               pf27(4),pf28(4),pf29(4),pf30(4),pf31(4),pf32(4),
+     &               pf33(4),pf34(4),pf35(4),pf36(4),pf37(4),pf38(4),
+     &               pf39(4),pf40(4),pf41(4),pf42(4),pf43(4),pf44(4),
+     &               pf45(4),pf46(4),pf47(4),pf48(4),pf49(4),pf50(4),
+     &               pf51(4),pf52(4),pf53(4),pf54(4),pf55(4),pf56(4),
+     &               pf57(4),pf58(4),pf59(4),pf60(4),pf61(4),pf62(4),
+     &               pf63(4)
+      common /amilcp_4f/vn2,vn3,vn4,vn5,vn6,vn7,vn8,vn9,vn10,vn11,vn12,
+     &               vn13,vn14,vn15,vn16,vn17,vn18,vn19,vn20,vn21,vn22,
+     &               vn23,vn24,vn25,vn26,vn27,vn28,vn29,vn30,vn31,vn32,
+     &               vn33,vn34,vn35,vn36,vn37,vn38,vn39,vn40,vn41,vn42,
+     &               vn43,vn44,vn45,vn46,vn47,vn48,vn49,vn50,vn51,vn52,
+     &               vn53,vn54,vn55,vn56,vn57,vn58,vn59,vn60,vn61,vn62,
+     &               vn63

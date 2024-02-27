@@ -1,0 +1,69 @@
+############################################################
+# README file for GRAPE-Dilepton(version1.1)
+#    Created on Mar.25, 2000 (by T.Abe)
+#    Revised on Oct.21, 2001 (by T.Abe)
+#    Revised on Nov.21, 2001 (by T.Abe)
+############################################################
+
+<< Introduction >>
+ In order to compile the source code, the following libraries are needed.
+
+    libbases.a  : for MC integrations and event generations (BASES/SPRING)
+    libchanel.a : for amplitude calculations (CHANEL library)
+    libkinem.a  : for kinematics calculations
+    libpdflib.a, libmathlib.a, libpacklib.a and libpythia61??.a (from CERNLIB)
+
+ The libraries: libbases.a, libchanel.a, libkinem.a and the SOPHIA program are
+ included in this program package.  Only the libraries from CERNLIB have to be
+ prepared by users.  libbases.a and the SOPHIA code were slightly modified,
+ so that the corresponding original versions of the programs must not be
+ linked to GRAPE-Dilepton.  The GRAPE-Dilepton program had been checked mainly
+ with PYTHIA6115.  If you find problems with higher versions (before v6.2),
+ please inform me (tabe@post.kek.jp).
+
+ The latest information is available from the following web page.
+
+        http://www.awa.tohoku.ac.jp/~tabe/grape/
+
+
+<< Compiling procedure >>
+ Here it is assumed that users are using UNIX with (t)csh.
+ In the following instruction, '%' indicates a UNIX prompt.
+
+    (1) Copy the source code archive file ([*].tar}) into your directory.
+    (2) % tar xvf [*].tar
+    (3) % cd [*]
+(Compiling BASES/SPRING...)
+    (4) % cd basesv5.1
+    (5) Modify 'Makefile' for your system.
+    (6) % make
+          (---> '../lib/libbases.a' is created.)
+(Compiling the CHANEL library...)
+    (7) % cd ../chanel
+    (8) Modify 'Makefile' for your system.
+    (9) % make
+          (---> '../lib/libchanel.a' is created.)
+(Compiling the KINEMATICS library...)
+   (10) % cd ../kinemlib
+   (11) % Modify 'Makefile' for your system.
+   (12) % make
+          (---> '../lib/libkinem.a' is created.)
+   (13) % cd ..
+(Compiling the GRAPE-Dilepton source code...)
+   (14) % cd src
+   (15) Modify 'set_grape' for your system.
+   (16) % source set_grape
+   (17) % make integ
+          (---> './integ' is created.)
+   (18) % make spring
+          (---> './spring' is created.)
+(END of compiling)
+
+
+<< How to run the executables >>
+  (1) Copy the files: 'integ', 'spring' and 'grape.cards' into your directory.
+  (2) Edit the file 'grape.cards' for your purpose.
+  (3) Run 'integ'.  (---> './grape.cards' is read by 'integ'.)
+  (4) After the execution of 'integ', run 'spring'.
+        (---> './grape.cards' and './bases.rz' are read by 'spring'.)
+(END of run)

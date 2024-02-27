@@ -1,0 +1,37 @@
+# --- for SunOS ---
+setenv  F77      f77
+setenv  FFLAGS  '-O -e'
+#
+# --- for SGI ---
+# setenv  F77      f77
+# setenv  FFLAGS  '-O -extend_source -Wl,-u -Wl,pydata_'
+#
+# --- for PC-Linux ---
+# setenv  F77      g77
+# setenv  FFLAGS  '-O -ffixed-line-length-132 -Wl,-u -Wl,pydata_'
+#
+# --- for HP ---
+# setenv  F77      f77
+# setenv  FFLAGS  '-O +es'
+#
+# --- for AIX ---
+# setenv  F77      xlf
+# setenv  FFLAGS  '-O -qstrict -qextname -qfixed=100'
+#=======================================
+
+#(Path to CERNLIB)
+setenv  USRLDIR    "-L/cern/2001/lib"
+
+setenv  SYSLIB     " "
+#(The following options might be needed for SunOS.)
+setenv  SYSLIB     "-lsocket -lnsl -lm -lc"
+
+setenv  USRLIB     "-lpdflib804 -lmathlib -lpacklib -lpythia6152  ${SYSLIB}"
+
+#=======================================
+setenv  GRACELDIR  "../lib"
+
+#=======================================
+source ./set_grape.usrobj
+
+#(EOF)

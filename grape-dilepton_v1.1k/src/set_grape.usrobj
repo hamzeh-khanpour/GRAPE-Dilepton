@@ -1,0 +1,13 @@
+set  obj1 = 'kinit_4f.o     kinem_4f.o     kfill_4f.o'
+set  obj2 = ' '
+set  obj3 = ' '
+set  obj4 = 'smintv.o stpxv.o spstr4.o spput4.o  py_proc_def.o pyupev.o'
+set  obj5 = 'read_cards.o routines_usr.o www.o brasse.o allm.o alpha_run.o'
+set  obj6 = 'nt_make.o  rnd_stat.o random.o'
+set  obj7 = 'get_proc.o get_graph_flag.o  pyrand.o pystat.o usrstr.o'
+set  obj8 = 'agcpol.o'
+set  obj9 = 'run_sophia.o eventgen.o jetset74dp.o'
+set  objA = ' '
+setenv  USROBJ1  "${obj1} ${obj2} ${obj3} ${obj4} ${obj5} ${obj6}"
+setenv  USROBJ2  "${obj7} ${obj8} ${obj9} ${objA}"
+setenv  USROBJ   "${USROBJ1} ${USROBJ2}"
